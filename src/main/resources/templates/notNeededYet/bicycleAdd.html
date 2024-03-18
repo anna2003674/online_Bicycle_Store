@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление товара</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styleHome.css">
+</head>
+<body>
+<header th:insert="blocks/headerBicycleManager :: head"></header>
+
+
+<div class="container mt-5 mb-5">
+    <h1>Добавление велосипеда</h1>
+    <form action="/bicycleAdd" method="post">
+        <input type="text" name="modell" placeholder="Введите название модели велосипеда" class="form-control"><br>
+        <input type="number" name="year" placeholder="Введите год производства велосипеда" class="form-control"><br>
+
+        <input type="text" name="bottomBracket" placeholder="Введите название каретки" class="form-control"><br>
+        <input type="text" name="brand" placeholder="Введите бренд велосипеда" class="form-control"><br>
+        <input type="text" name="chain" placeholder="Введите тип велосипедной цепи" class="form-control"><br>
+
+        <input type="text" name="saddle" placeholder="Введите название седла" class="form-control"><br>
+        <input type="text" name="pedals" placeholder="Введите название педалей" class="form-control"><br>
+        <input type="text" name="frontHub" placeholder="Введите тип передней втулки" class="form-control"><br>
+
+        <input type="text" name="type" placeholder="Введите тип велосипеда" class="form-control"><br>
+        <input type="number" name="price" placeholder="Введите стоимость велосипеда" class="form-control"><br>
+
+        <input type="number" name="weight" placeholder="Введите вес велосипеда" class="form-control"><br>
+        <input type="number" name="wheeDiameter" placeholder="Введите диаметр колес" class="form-control"><br>
+        <input type="text" name="frameMaterial" placeholder="Введите материал рамы" class="form-control"><br>
+
+        <input type="text" name="brakeType" placeholder="Введите тип тормозов" class="form-control"><br>
+        <input type="number" name="numberSpeeds" placeholder="Введите количество скоростей" class="form-control"><br>
+        <input type="text" name="depreciation" placeholder="Введите тип амортизации" class="form-control"><br>
+
+        <input type="number" name="quantityInStock" placeholder="Введите количество велосипедов на склааде" class="form-control"><br>
+        <textarea name="description" placeholder="Введите описание велосипеда" class="form-control"></textarea><br>
+
+        <button type="submit" class="btn btn-success">Добавить велосипед</button>
+
+    </form>
+
+</div>
+
+
+
+<div th:insert="blocks/footer :: foot"></div>
+</body>
+</html>

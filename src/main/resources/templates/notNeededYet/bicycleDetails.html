@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Детали</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styleHome.css">
+</head>
+<body>
+<header th:insert="blocks/headerBicycleManager :: head"></header>
+
+
+<div class="container mt-5">
+  <div th:each="el : ${bicycle}" class="alert alert-info mt-2">
+    <h3 th:text="${el.modell}"></h3>
+    <p th:text="${el.year}"></p>
+    <p th:text="${el.bottomBracket}"></p>
+    <p th:text="${el.brand}"></p>
+    <p th:text="${el.chain}"></p>
+    <p th:text="${el.saddle}"></p>
+    <p th:text="${el.pedals}"></p>
+    <p th:text="${el.frontHub}"></p>
+    <p th:text="${el.type}"></p>
+    <p th:text="${el.price}"></p>
+    <p th:text="${el.weight}"></p>
+    <p th:text="${el.wheelDiameter}"></p>
+    <p th:text="${el.frameMaterial}"></p>
+    <p th:text="${el.brakeType}"></p>
+    <p th:text="${el.numberSpeeds}"></p>
+    <p th:text="${el.quantityInStock}"></p>
+    <p th:text="${el.depreciation}"></p>
+    <p th:text="${el.description}"></p>
+
+    <a th:href="'/allBicycle/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a><br><br>
+    <form th:action="'/allBicycle/'+ ${el.id} + '/remove'" method="post">
+      <button class="btn btn-warning" type="submit">Удалить</button>
+    </form>
+
+  </div>
+</div>
+<div th:insert="blocks/footer :: foot"></div>
+</body>
+</html>
